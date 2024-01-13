@@ -1,5 +1,5 @@
 public class MainClass {
     public static void main(String[] args) {
-        System.out.println("Main class running Also ghaiboss rocking");
+        System.out.println("ghai saab lets rock");
     }
 }
