@@ -7,7 +7,6 @@ public class PosAndNegPair {
        long a[ ] = {1, -3, 2, 3, 6, -1, -3, 3,-3};
 
         ArrayList<Long> list = new ArrayList<>(Arrays.asList(1L, 2L, 3L, 4L, 5L));
-        list.remove(list.));
 
        // System.out.println(PosNegPair(a,n));
         System.out.println(list);
