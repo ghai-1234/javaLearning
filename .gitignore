@@ -1,2 +1,6 @@
 *.xml
 *.class
+*.class
+/out
+/out/production/javaLearning
+out/production/javaLearning/CommonElementinThreeArrays.class
