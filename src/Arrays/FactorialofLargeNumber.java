@@ -9,20 +9,9 @@ public class FactorialofLargeNumber {
 
     public static void main(String[] args) {
 
-        int n = 5;
+        int n = 13;
         System.out.println(factorial(n));
 
-        Set<String> stringSets = new HashSet<String>()
-        {
-            {
-                add("set1");
-                add("set2");
-                add("set3");
-            }
-        };
-
-
-        //System.out.println(factorialOfLargeNumber(n));
     }
 
 

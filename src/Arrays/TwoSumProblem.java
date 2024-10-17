@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class TwoSumProblem {
 
     public static void main(String[] args) {
-        int[] arr = {23,4,6,5,6,7};
+        int[] arr = {23,4,6,50,6,7};
         int n = arr.length;
         int targetSum = 28;
         boolean ans = doesExistAnySum(arr,n,targetSum);

@@ -9,43 +9,92 @@ public class ThreeSumProblem {
         int[] arr = {-1,0,1,2,-1,-4};
         int n = arr.length;
         int targetSum = 0;
-        Set<int[]> ans = (findThreeSum(arr,n,targetSum));
-        for (int[] c : ans) {
-            for (int i = 0; i < c.length; i++) {
-                System.out.print(c[i] + " ");
+        ArrayList<List> ans = findThreeSum(arr,n,targetSum);
+        //System.out.println(ans.size());
+        for (List c : ans) {
+            for (int i = 0; i < c.size(); i++) {
+                System.out.print(c.get(i) + " ");
             };
             System.out.println("");
         }
     }
 
-    private static Set<Integer[]> findThreeSum(int[] a, int n, int targetSum) {
+    private static ArrayList<List> findThreeSum(int[] a, int n, int targetSum) {
 
         //First method is brute force. Run three loops and find if a[i] + a[j] + a[k] = 0
 
 
         //Second method is using hashing
-        HashMap<Integer,Integer> map = new HashMap();
-        Set<Integer[]> s = new HashSet<>();
+//        HashMap<Integer,Integer> map = new HashMap();
+//        Set<List> s = new HashSet<>();
+//
+//        for (int i = 0; i < n-1; i++) {
+//
+//            for (int j = i+1; j < n; j++) {
+//
+//                if(!map.containsKey(-(a[i]+a[j]))) {
+//                    map.put(a[j],j);
+//                }
+//                else {
+//                    int k = map.get(-(a[i]+a[j]));
+//                    List l = new ArrayList();
+//                    l.add(a[i]);
+//                    l.add(a[j]);
+//                    l.add(a[k]);
+//                    Collections.sort(l);
+//                    s.add(l);
+//                }
+//
+//            }
+//
+//        }
+//        return s;
 
-        for (int i = 0; i < n-1; i++) {
 
-            for (int j = i+1; j < n; j++) {
+        //Third way using three pointer approach
 
-                if(!map.containsKey(-(a[i]+a[j]))) {
-                    map.put(a[j],j);
+        int i = 0;
+
+        ArrayList<List> ans = new ArrayList<>();
+
+        Arrays.sort(a);
+        for ( i = 0; i < n-1; i++) {
+
+            if(i>0 && a[i]==a[i-1])
+                continue;
+            int j = i+1;
+           int k= n-1;
+
+            while(j < k) {
+                int sum = a[i] + a[j] + a[k];
+
+                  if (sum > 0) {
+                   k--;
                 }
-                else {
-                    int k = map.get(-(a[i]+a[j]));
-                    List l = new ArrayList(){
-                        {a[i],a[j],a[k]};
-                    Arrays.sort(subArray);
-                    s.add(subArray);
+                 else if (sum < 0) {
+                    j++;
                 }
+                else  {
+                    List c = new ArrayList();
+                    c.add(a[i]);
+                    c.add(a[j]);
+                    c.add(a[k]);
 
+                    ans.add(c);
+                    j++;
+                    k--;
+                    while (j<k && a[j] == a[j-1]) {
+                        j++;
+                    }
+                      while (j<k && a[k] == a[k+1]) {
+                          k--;
+                      }
+                }
             }
-
         }
-        return s;
+        return ans;
+    }
+
+
 
     }
-}

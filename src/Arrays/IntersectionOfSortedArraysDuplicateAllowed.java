@@ -8,13 +8,13 @@ public class IntersectionOfSortedArraysDuplicateAllowed {
    static ArrayList<Integer> result = new ArrayList<>();
 
     public static void main(String[] args) {
-        int a[] = {1,2,5,12,3,6};
-        int b[] = {12,3,2,1,3};
+        int a[] = {1,1,2,2,9,5};
+        int b[] = {1,2,2,5};
         int m = a.length;
         int n = b.length;
-        //findIntersectionWithDuplicate(a,b,m,n);
+        findIntersectionWithDuplicate(a,b,m,n);
         //findIntersectionWithOutDuplicate(a,b,m,n);
-        findIntersectionIfUnsortedArray(a,b,m,n);
+        //findIntersectionIfUnsortedArray(a,b,m,n);
     }
 
     private static void findIntersectionIfUnsortedArray(int[] a, int[] b, int m, int n) {
