@@ -27,7 +27,7 @@ public class LengthOfLastWord {
     /*
     Another 2 approach
 
-    String[] strs = s.trim().split("\\s+");
+        String[] strs = s.trim().split("\\s+");
     return strs[strs.length-1].length();
      */
 

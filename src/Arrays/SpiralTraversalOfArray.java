@@ -9,7 +9,8 @@ public class SpiralTraversalOfArray {
         int[][] matrix = {
                 {1, 2, 3},
                 {4, 5, 6},
-                {7, 8, 9}
+                {7, 8, 9},
+                {0, 1, 3 }
         };
 
         List<Integer> result = spiralOrder(matrix);
@@ -39,7 +40,7 @@ public class SpiralTraversalOfArray {
                 bottom--;
             }
             if(left<=right) {
-                for (int i = bottom; i >= right; i--) {
+                for (int i = bottom; i >= top; i--) {
                     ans.add(matrix[i][left]);
                 }
                 left++;
