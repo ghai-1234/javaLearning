@@ -35,7 +35,6 @@ public class LinkedList {
     }
 
     //Reverse the linked list
-
     public void reverse() {
        Node prev = null;
        Node current = head;
@@ -171,6 +170,66 @@ public class LinkedList {
         }
 
     }
+
+    public Node rotateLeftByKPlaces(Node head, int nodes, int k) {
+        if(head== null)
+            return head;
+        k = k % nodes;
+        if(k==0)
+            return head;
+        Node current = head;
+
+        for(int i = 1;i<k;i++) {
+            current = current.next;
+        }
+        Node newHead = current.next;
+        Node tempHead = newHead;
+        while (tempHead.next != null)
+        {
+            tempHead = tempHead.next;
+        }
+
+        tempHead.next = head;
+        current.next = null;
+
+    return newHead;
+    }
+    public int countNodes(Node head) {
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
+    public Node rotateRightByKPlaces(Node head, int nodes, int k) {
+        if(head== null)
+            return head;
+        k = k % nodes;
+        if(k==0)
+            return head;
+        int diffNodes = nodes - k;
+        Node current = head;
+        Node tempHead;
+
+        for (int i = 1; i < diffNodes; i++) {
+            current = current.next;
+
+        }
+        tempHead = current.next;
+        current.next = null;
+
+        Node lastHead = tempHead;
+        while (lastHead.next != null) {
+            lastHead = lastHead.next;
+        }
+        lastHead.next = head;
+        return tempHead;
+
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 //        list.append(5);
@@ -183,21 +242,25 @@ public class LinkedList {
 
 //        Node mid = list.middle();
 //        System.out.println("middle is " + mid.data);
-        Node head = new Node(7);
-        head.next = new Node(58);
-        head.next.next = new Node(58);
-        head.next.next.next = new Node(34);
-        head.next.next.next.next = new Node(16);
-        head.next.next.next.next.next = new Node(16);
+        Node head = new Node(10);
+        head.next = new Node(20);
+        head.next.next = new Node(30);
+        head.next.next.next = new Node(40);
+        head.next.next.next.next = new Node(50);
 
 
         // Create a loop (4->5->3->2)
        // head.next.next.next.next.next = head;
 
         ///list.removeLoop(head);
-        list.removeDuplicate(head);
-        list.traverse(head);
-
+        //list.removeDuplicate(head);
+        //list.traverse(head);
+        int nodes = list.countNodes(head);
+        int k = 5;
+//       Node nh = list.rotateLeftByKPlaces(head,nodes,k);
+       //list.traverse(head);
+        Node rh = list.rotateRightByKPlaces(head,nodes,k);
+        list.traverse(rh);
 
     }
 

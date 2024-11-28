@@ -8,6 +8,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         int [] a = {1,5,4,8,-10,34,2,0,9,-9,-1};
+
         int low=0,high=a.length-1;
         mergeSort(a,low,high);
 

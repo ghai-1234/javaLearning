@@ -6,9 +6,9 @@ import java.util.HashMap;
 public class SubArrayWhoseSumisKIndex {
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,7,5};
+        int[] arr = {1,2,3,7,9,7,5};
         int n = arr.length;
-        int targetSum = 12;
+        int targetSum = 21;
         System.out.println(subarraywhosesumisK(arr,n,targetSum));
     }
 

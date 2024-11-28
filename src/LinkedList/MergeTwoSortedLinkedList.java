@@ -47,7 +47,7 @@ public class MergeTwoSortedLinkedList {
 
         Node l2 = new Node(2);
         l2.next = new Node(4);
-        l2.next.next = new Node(6);
+        l2.next.next = new Node(600);
         Node mergedHead = mergeTwoSortedLinkedLists(l1,l2);
 
         traverse(mergedHead);
